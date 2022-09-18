@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Billingdisplay from "./Billingdisplay";
 import BillitemDisplay from "./BillItemDisplay";
+import './billing.css';
+
 const style={
     keyboard:{
     
@@ -11,12 +13,14 @@ let itemno = [];
 
 
 export function Billingkeyboard(){
+    const[count,setcount] = useState()
     function clickevent(event){
         itemno.push(event.target.value)
         console.log('clicked Item: ',itemno);
         
     }
     function handleenter(e){
+        setcount(count+1);
         if(itemno.length==='0'){
             
         }
