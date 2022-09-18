@@ -6,7 +6,7 @@ import './billing.css';
 
 const style={
     keyboard:{
-    
+        marginLeft:'0'
     },
     button:{
         width:'4rem'
