@@ -5,7 +5,7 @@ import './billing.css';
 
 const style ={
     display:{
-        width:'345px',
+        width:'350px',
         height:'8vh',
         borderRadius:'10px',
         border:'1px solid grey',
