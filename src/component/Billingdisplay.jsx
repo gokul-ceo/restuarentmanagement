@@ -1,29 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './billing.css';
+import {ErrorBoundary} from 'react-error-boundary'
+
 
 
 const style ={
     display:{
-        width:'400px',
+        width:'350px',
         height:'8vh',
         borderRadius:'10px',
         border:'1px solid grey',
-        marginLeft:'0'
+        display:'block'
 
     }
 }
+function ErrorHandler({error}){
+    return (
+        <div role="alert">
+          <p>An error occurred:</p>
+          <pre>{error.message}</pre>
+        </div>
+      )
+}
+
+
 function Billingdisplay(props){
-    console.log('value:',props.value);
-    const menu = [{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30}] 
-    const [exist,setexist] = useState(false);
-    
+    // console.log('value:',props.value);
+    console.log(props.value);
+    // const menu = [{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},]  
     return <>
+    <ErrorBoundary FallbackComponent={ErrorHandler}>
     <div style={style.display} className="billingdisplay mx-2">
-    {props.value===undefined ? <span>Enter Item No: </span> : props.value > menu.length && props.value === '00'?<span>Item {props.value} does not exist</span> : <span>Enter No of {menu[props.value].name} : </span>
-    }
-    
+    <span>Item: {props.item}</span>
+    <p>Quantity: {props.quantity}</p>
     </div>
+    </ErrorBoundary>
     </>
         
     }
