@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { EditIcon, EditIconfill, EyeIcon, EyeIconfill, PrintIcon, PrintIconfill } from "./Icons";
 const style = {
     aside:{
-        width:'30vh',
+        width:'9.8rem',
         height:'150px',
         marginLeft:"0",
         position:'absolute',
