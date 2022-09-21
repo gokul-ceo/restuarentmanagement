@@ -7,7 +7,7 @@ const style = {
         height:'150px',
         marginLeft:"0",
         position:'absolute',
-        top:'3.5rem',
+        top:'1.8rem',
         left:'0px',
         zIndex:'1',
         

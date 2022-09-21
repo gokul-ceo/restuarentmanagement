@@ -79,7 +79,6 @@ export function Billingkeyboard(){
  
     
     return <>
-    <Billheader/>
     <BillitemDisplay value={itemdisplay}/>
     <Billingdisplay value={orderarr} item={itemno} quantity={quantity} />
     <div style={style.keyboard} className="container-sm billingkeyboard text-center fs-1">
