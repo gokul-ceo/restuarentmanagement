@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Billingdisplay from "./Billingdisplay";
-import BillitemDisplay from "./BillItemDisplay";
+import {BillitemDisplay} from "./BillItemDisplay";
+import { printjob } from "./BillItemDisplay";
 import './billing.css';
+import { Billheader } from "./billingheader";
 
 const style={
     keyboard:{
@@ -72,9 +74,12 @@ export function Billingkeyboard(){
         singlearr=[]
         setitem(0)
         setquantity(0)
+        setitemdisplay([])
     }
+ 
     
     return <>
+    <Billheader/>
     <BillitemDisplay value={itemdisplay}/>
     <Billingdisplay value={orderarr} item={itemno} quantity={quantity} />
     <div style={style.keyboard} className="container-sm billingkeyboard text-center fs-1">
@@ -117,7 +122,7 @@ export function Billingkeyboard(){
                 <button onClick={Clickevent}style={style.button}  type= 'button' value='3' className='btn btn-outline-primary'>3</button>
             </div>
             <div style={style.col} className="col m-0">
-                <button type= 'button' onClick={Clickevent} style={style.funckye}  className='btn btn-primary'> Print </button>
+                <button type= 'button' onClick={printjob(orderarr)} style={style.funckye}  className='btn btn-primary'> Print </button>
             </div>
          </div>
          <div className="row m-0 p-0 my-2">

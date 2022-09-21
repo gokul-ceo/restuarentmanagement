@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './billing.css';
 const style={
     display:{
         height:'50vh',
         marginTop:'1.5rem',
         width:'95%',
-        marginBottom:'1.5rem'
+        marginBottom:'1.5rem',  
+        zIndex:'0'
     },
     itemdisply:{
 
@@ -17,7 +19,7 @@ const style={
     details:{
         height:'2rem',
         borderRadius:'10px',
-        backgroundColor:'grey',
+        border:'1px solid grey',
         marginBottom:'5px'
         
     },
@@ -30,16 +32,37 @@ const style={
     warning:{
         textAlign:'center',
         fontWeight:'bolder'
+    },
+    close:{
+        height:'16px',
+        width:'16px',
+        marginTop:'6px'
     }
 
+
 }
-function BillitemDisplay(props){
-    console.log(props.value);
+export function printjob(array){
+    console.log("print this array: ",array);
+}
+export function BillitemDisplay(props){
+    const menu = [{Name:'',Price:''},{Name:'Idly',Price:'8'},{Name:'Dosa',Price:'50'},{Name:'Pongal',Price:'30'},{Name:'Poori',Price:'20'}]
     const Todisplay = props.value
+    const total = function(){
+        
+    }
+    // function handledivclick(){
+    //     setclicked(true)
+    // }
+    // function handleclose(){
+    //     console.log('I have been clicked!!');
+    //     // console.log('Here is the item passed :',item);
+    // }
+    // const[clicked,setclicked] = useState(false)
     const[isempty,setempty] = useState(false)
     useEffect(()=>{
         Todisplay.length<=0?setempty(true):setempty(false)
     },[Todisplay])
+
     return <>
     
     <div style={style.display} className=" billitemdisplay container-sm ">
@@ -54,16 +77,18 @@ function BillitemDisplay(props){
         {!isempty?Todisplay.map((item)=>
         <div style={style.details} className="container d-flex justify-content-between itemdetails "> 
         <h6 style={style.item}>1.</h6>
-        <h6 style={style.item}>{item[0]}</h6>
+        <h6 style={style.item}>{menu[item[0]].Name}</h6>
         <h6 style={style.item}>{item[1]}</h6>
-        <h6 style={style.item}>8</h6>
+        <h6 style={style.item}>{menu[item[0]].Price}</h6>
         <h6 style={style.item}>₹64</h6>
+       
+        {/* <img src="close.png" alt="close_image" /> */}
+        {/* {clicked?<img style={style.close}  onClick={handleclose()} src="close.png" alt="close_image" />:null} */}
         </div>
        ):<div style={style.warning} className="warningdiv"><span>⛔No Bill to display⛔</span></div>}
        
        </div>
-      
     </div>
     </>
 }
-export default BillitemDisplay;
+// export default BillitemDisplay;

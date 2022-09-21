@@ -3,15 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './billing.css';
 import {ErrorBoundary} from 'react-error-boundary'
 
-
-
 const style ={
     display:{
         width:'350px',
         height:'8vh',
         borderRadius:'10px',
         border:'1px solid grey',
-        display:'block'
+        display:'block',
+        zIndex:'0'
 
     }
 }
