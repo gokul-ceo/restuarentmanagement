@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { EditIcon, EditIconfill, EyeIcon, EyeIconfill, PrintIcon, PrintIconfill } from "./Icons";
+import { EditIcon, EditIconfill, EyeIcon, EyeIconfill, PrintIcon, PrintIconfill, } from "./Icons";
 const style = {
     aside:{
         width:'9.8rem',
