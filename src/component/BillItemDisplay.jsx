@@ -4,7 +4,6 @@ import './billing.css';
 const style={
     display:{
         height:'50vh',
-        marginTop:'1.5rem',
         width:'95%',
         marginBottom:'1.5rem',  
         zIndex:'0'
@@ -47,9 +46,13 @@ export function printjob(array){
 export function BillitemDisplay(props){
     const menu = [{Name:'',Price:''},{Name:'Idly',Price:'8'},{Name:'Dosa',Price:'50'},{Name:'Pongal',Price:'30'},{Name:'Poori',Price:'20'}]
     const Todisplay = props.value
-    const total = function(){
-        
-    }
+     const defaultitle = <div style={style.detailsdefault} className="container d-flex justify-content-between itemdetails "> 
+          <h6>SI.NO</h6>
+          <h6>Item</h6>
+          <h6>Quantity</h6>
+          <h6>Price</h6>
+          <h6>Total</h6>
+       </div>
     // function handledivclick(){
     //     setclicked(true)
     // }
@@ -62,18 +65,22 @@ export function BillitemDisplay(props){
     useEffect(()=>{
         Todisplay.length<=0?setempty(true):setempty(false)
     },[Todisplay])
+    function sticktitle(){
+        console.log("I am ready to stick");
+    }
 
     return <>
     
-    <div style={style.display} className=" billitemdisplay container-sm ">
-    <div style={style.detailsdefault} className="container d-flex justify-content-between itemdetails "> 
+    <div style={style.display} ons className=" billitemdisplay container-sm ">
+    {/* <div style={style.detailsdefault} className="container d-flex justify-content-between itemdetails "> 
           <h6>SI.NO</h6>
           <h6>Item</h6>
           <h6>Quantity</h6>
           <h6>Price</h6>
           <h6>Total</h6>
-       </div>
-       <div style={style.overflowcontainer} className="container  overflow-auto">
+       </div> */}
+       <div style={style.overflowcontainer}  className="container  overflow-auto">
+       {defaultitle}
         {!isempty?Todisplay.map((item)=>
         <div style={style.details} className="container d-flex justify-content-between itemdetails "> 
         <h6 style={style.item}>1.</h6>
