@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Billingdisplay from "./Billingdisplay";
 import {BillitemDisplay} from "./BillItemDisplay";
 import { printjob } from "./BillItemDisplay";
-import './billing.css';
-import { Billheader } from "./billingheader";
-
 const style={
     keyboard:{
         

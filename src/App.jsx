@@ -1,7 +1,8 @@
 import React from "react";
-import {Billingkeyboard} from "./component/Billingkeyboard";
-import Header from "./component/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {ErrorBoundary} from 'react-error-boundary'
+import Home from "./Home";
+import Billing from "./component/Billing/Billing";
 function ErrorHandler({error}){
     return (
         <div role="alert">
@@ -13,8 +14,12 @@ function ErrorHandler({error}){
 function App(){ 
     return <>
     <ErrorBoundary FallbackComponent={ErrorHandler}>
-    <Header/>
-    <Billingkeyboard/>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+       <Route path="billing" element={ <Billing/>}/>
+      </Routes>
+    </BrowserRouter>
     </ErrorBoundary>
     </>
 }

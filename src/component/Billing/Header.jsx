@@ -1,6 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './billing.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Billheader } from "./billingheader";
 
 function Header(){

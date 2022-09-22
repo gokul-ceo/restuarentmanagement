@@ -1,6 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './billing.css';
 import {ErrorBoundary} from 'react-error-boundary'
 
 const style ={

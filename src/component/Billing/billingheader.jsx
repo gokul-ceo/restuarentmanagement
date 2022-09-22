@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './billing.css';
 import BillAside from "./BillAside";
 import { CloseBtn, Hamburger } from "./Icons";
 export function Billheader(){

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './billing.css';
 const style={
     display:{
         height:'50vh',
