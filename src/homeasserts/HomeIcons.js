@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 export function MenuIcon(props){
@@ -14,10 +15,18 @@ export function EmployeeIcon(props){
 }
 
 export function UserIcon(props){
-    return <div style={{width:'80px',height:'25px',borderRadius:'92px',backgroundColor:'grey',margin:'0.7rem 0'}}> <span style={{marginLeft:'0',paddingLeft:'1px'}}>Admin</span>
+    return <div style={{width:'80px',height:'25px',borderRadius:'92px',backgroundColor:'#D9D9D9',margin:'0.7rem 0'}}> <span style={{marginLeft:'1.3rem',paddingLeft:'0',fontFamily:'Inter,sans-serif',fontSize:'9px',fontWeight:'bold'}}>Admin</span>
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle " style={{marginLeft:'7px',marginBottom:'2px'}} viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 </svg>
+    </div>
+}
+export function RecentOrderHeader(props){
+    return <div className="container-sm d-flex justify-content-between">
+    <span style={{fontFamily:'Roboto,sans-serif',fontSize:'17px',fontWeight:'bold',color:'#FF616D'}}>{props.divname}</span>
+    <div style={{width:'70px',height:'16px',borderRadius:'10px',backgroundColor:'#FF616D'}} className='my-1'>
+      <h2 style={{fontSize:'12px'}}><a href='#' style={props.style.anchor}>{props.btnname}</a></h2>
+    </div>
     </div>
 }

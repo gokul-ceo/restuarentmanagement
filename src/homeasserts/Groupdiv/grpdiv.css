@@ -1,0 +1,20 @@
+#Attendance{
+    width: 150px;
+    height: 51px;
+    border-radius: 12px;
+    /* background-color: #FF5050; */
+    background-image:url('./employe.jpg');
+    background-size:cover;
+    background-position: 1px -0.7rem;
+    border: 1px solid #FF5050;
+}
+#Billing{
+    width: 150px;
+    height: 51px;
+    border-radius: 12px;
+    /* background-color: #FF5050; */
+    background-image:url('./billing.jpg');
+    background-size:cover;
+    background-position: 1px 0.3rem;
+    border: 1px solid #FF5050;
+}
