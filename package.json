@@ -38,16 +38,8 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist":[],
   "devDependencies": {
-    "grunt-contrib-uglify-es": "^3.3.0",
     "react-router-dom": "^6.0.1"
   }
 }
