@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {ErrorBoundary} from 'react-error-boundary'
-
+import { rerender_inspector } from "../../Render_inspector";
 const style ={
     display:{
         width:'350px',
@@ -24,17 +24,22 @@ function ErrorHandler({error}){
 
 
 function Billingdisplay(props){
+    const[count,setcount] = useState(1)
+    useEffect(()=>{
+        setcount(count + 1)
+        rerender_inspector('Billingdisplay.jsx',count)
+    },[])
     // console.log('value:',props.value);
     console.log(props.value);
     // const menu = [{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},{name:'Idly',price:8},{name:'Dosa',price:20},{name:'Pongal',price:30},]  
-    return <>
+    return <React.Fragment>
     <ErrorBoundary FallbackComponent={ErrorHandler}>
     <div style={style.display} className="billingdisplay mx-2">
     <span>Item: {props.item}</span>
     <p>Quantity: {props.quantity}</p>
     </div>
     </ErrorBoundary>
-    </>
+    </React.Fragment>
         
     }
     

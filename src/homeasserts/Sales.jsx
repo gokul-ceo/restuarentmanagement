@@ -9,11 +9,11 @@ const style={
     }
 }
 function SalesDiv(){
-    return <>
+    return <React.Fragment>
     <div style={style.salesdiv} className="container-sm text-center align-item-center my-4">
      <span style={style.name}>Total Sales:+12300</span>
     </div>
-    </>
+    </React.Fragment>
 
 }
 

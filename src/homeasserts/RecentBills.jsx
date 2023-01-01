@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { RecentOrderHeader } from "./HomeIcons";
+
 const style={
     recentdiv:{
         height:'65px',
@@ -22,11 +22,16 @@ const style={
 }
 
 function RecentBills(){
-    return <>
+    return <React.Fragment>
     <div style={style.recentdiv} className="container">
-    <RecentOrderHeader divname={"Recent Bills"} btnname={'View bills'} style={style}/>
+    <div className="container-sm d-flex justify-content-between">
+    <span style={{fontFamily:'Roboto,sans-serif',fontSize:'17px',fontWeight:'bold',color:'#FF616D'}}>Recent Orders</span>
+    <div style={{width:'70px',height:'16px',borderRadius:'10px',backgroundColor:'#FF616D'}} className='my-1'>
+      <h2 style={{fontSize:'12px'}}><a href='...' style={style.anchor}>View Order</a></h2>
+    </div>
+    </div>
          
     </div>
-    </>
+    </React.Fragment>
 }
 export default RecentBills;

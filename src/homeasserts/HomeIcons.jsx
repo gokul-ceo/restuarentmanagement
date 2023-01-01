@@ -22,11 +22,11 @@ export function UserIcon(props){
 </svg>
     </div>
 }
-export function RecentOrderHeader(props){
-    return <div className="container-sm d-flex justify-content-between">
-    <span style={{fontFamily:'Roboto,sans-serif',fontSize:'17px',fontWeight:'bold',color:'#FF616D'}}>{props.divname}</span>
-    <div style={{width:'70px',height:'16px',borderRadius:'10px',backgroundColor:'#FF616D'}} className='my-1'>
-      <h2 style={{fontSize:'12px'}}><a href='#' style={props.style.anchor}>{props.btnname}</a></h2>
-    </div>
-    </div>
-}
+// export function RecentOrderHeader(props){
+//     return <div className="container-sm d-flex justify-content-between">
+//     <span style={{fontFamily:'Roboto,sans-serif',fontSize:'17px',fontWeight:'bold',color:'#FF616D'}}>{props.divname}</span>
+//     <div style={{width:'70px',height:'16px',borderRadius:'10px',backgroundColor:'#FF616D'}} className='my-1'>
+//       <h2 style={{fontSize:'12px'}}><a href='#' style={props.style.anchor}>{props.btnname}</a></h2>
+//     </div>
+//     </div>
+// } 

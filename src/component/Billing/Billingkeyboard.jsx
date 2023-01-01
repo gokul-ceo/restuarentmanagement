@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+/* eslint-diable */
+import React, { useState,useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Billingdisplay from "./Billingdisplay";
 import {BillitemDisplay} from "./BillItemDisplay";
+import { rerender_inspector } from "../../Render_inspector";
 import { printjob } from "./BillItemDisplay";
 const style={
     keyboard:{
@@ -23,6 +25,11 @@ let Itemquantity;
 let singlearr = [];
 let totalarr =[];
 export function Billingkeyboard(){
+    const[countrender,setcountrender] = useState(1)
+    useEffect(()=>{
+        setcount(countrender + 1)
+        rerender_inspector('Billingkeyboard.jsx',countrender)
+    },[])
     const[itemdisplay,setitemdisplay] = useState([])
     const[itemno,setitem] = useState(0)
     const[quantity,setquantity] = useState(0)
@@ -75,61 +82,61 @@ export function Billingkeyboard(){
     }
  
     
-    return <>
+    return <React.Fragment>
     <BillitemDisplay value={itemdisplay}/>
     <Billingdisplay value={orderarr} item={itemno} quantity={quantity} />
     <div style={style.keyboard} className="container-sm billingkeyboard text-center fs-1">
     <div className="row m-0 p-0 my-2  ">
             <div className="col">
-                <button onClick={Clickevent} style={style.button} value='7' type= 'button' className='btn btn-outline-primary'>7</button>
+                <button onClick={Clickevent} style={style.button} value='7' type='button' className='btn btn-outline-primary'>7</button>
             </div>
             <div className="col">
-                <button onClick={Clickevent} style={style.button} value='8' type= 'button' className='btn btn-outline-primary'>8</button>
+                <button onClick={Clickevent} style={style.button} value='8' type='button' className='btn btn-outline-primary'>8</button>
             </div>
             <div className="col">
-                <button onClick={Clickevent}style={style.button}type= 'button' value='9'  className='btn btn-outline-primary'>9</button>
+                <button onClick={Clickevent} style={style.button} type='button' value='9'  className='btn btn-outline-primary'>9</button>
             </div>
             <div style={style.col} className="col">
-                <button onClick={Clickevent} type= 'button'  style={style.funckye} className='btn btn-warning'>Menu</button>
+                <button onClick={Clickevent} type='button'  style={style.funckye} className='btn btn-warning'>Menu</button>
             </div>
          </div>
          <div className="row m-0 p-0 my-2">
             <div id="btn" className="col m-0 ">
-                <button   onClick={Clickevent} style={style.button}  type= 'button' value='4' className='btn btn-outline-primary'>4</button>
+                <button   onClick={Clickevent} style={style.button}  type='button' value='4' className='btn btn-outline-primary'>4</button>
             </div>
             <div className="col m-0">
-                <button  onClick={Clickevent} style={style.button} type= 'button' value='5' className='btn btn-outline-primary'>5</button>
+                <button  onClick={Clickevent} style={style.button} type='button' value='5' className='btn btn-outline-primary'>5</button>
             </div>
             <div className="col m-0">
-                <button  onClick={Clickevent}style={style.button} type= 'button' value='6' className='btn btn-outline-primary'>6</button>
+                <button  onClick={Clickevent} style={style.button} type='button' value='6' className='btn btn-outline-primary'>6</button>
             </div>
             <div style={style.col} className="col m-0">
-                <button onClick={handlecancel}  type= 'button' style={style.funckye}  className='btn btn-danger'>Cancel</button>
+                <button onClick={handlecancel}  type='button' style={style.funckye}  className='btn btn-danger'>Cancel</button>
             </div>
          </div>
          <div className="row m-0 p-0my-2 ">
             <div className="col m-0">
-                <button  onClick={Clickevent}style={style.button} type= 'button' value='1' className='btn btn-outline-primary'>1</button>
+                <button  onClick={Clickevent}style={style.button} type='button' value='1' className='btn btn-outline-primary'>1</button>
             </div>
             <div className="col m-0">
-                <button onClick={Clickevent} style={style.button} type= 'button' value='2' className='btn btn-outline-primary'>2</button>
+                <button onClick={Clickevent} style={style.button} type='button' value='2' className='btn btn-outline-primary'>2</button>
             </div>
             <div className="col m-0">
-                <button onClick={Clickevent}style={style.button}  type= 'button' value='3' className='btn btn-outline-primary'>3</button>
+                <button onClick={Clickevent}style={style.button}  type='button' value='3' className='btn btn-outline-primary'>3</button>
             </div>
             <div style={style.col} className="col m-0">
-                <button type= 'button' onClick={printjob(orderarr)} style={style.funckye}  className='btn btn-primary'> Print </button>
+                <button type='button' onClick={printjob(orderarr)} style={style.funckye}  className='btn btn-primary'> Print </button>
             </div>
          </div>
          <div className="row m-0 p-0 my-2">
             <div className="col m-0">
-                <button  onClick={Clickevent} type= 'button' style={style.button} value='0' className='btn btn-outline-primary'>0</button>
+                <button  onClick={Clickevent} type='button' style={style.button} value='0' className='btn btn-outline-primary'>0</button>
             </div>
             <div className="col m-0">
-                <button  type= 'button' value='00' style={style.button} className='btn btn-outline-primary'>00</button>
+                <button  type='button' value='00' style={style.button} className='btn btn-outline-primary'>00</button>
             </div>
             <div className="col m-0">
-                <button   type= 'button' value='.' style={style.button} className='btn btn-outline-primary'>.</button>
+                <button   type='button' value='.' style={style.button} className='btn btn-outline-primary'>.</button>
             </div>
             <div style={style.col} className="col m-0">
                 <button  onClick={handleenter}  type='button'style={style.funckye} className='btn btn-success'>Enter</button>
@@ -137,5 +144,5 @@ export function Billingkeyboard(){
          </div>
          
     </div>
-    </>
+    </React.Fragment>
 }
