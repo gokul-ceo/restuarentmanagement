@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch,useSelector} from "react-redux";
-import socket from "../context/socket";
-import HomeHeader from "../homeasserts/HomeHeader";
+import socket from "../../context/socket";
+import HomeHeader from "../../homeasserts/HomeHeader";
+import { server_warning } from "../../Redux/global_state/global_state_slice";
 import ItemBox from "./Itembox";
 import danger from './danger.png'
-import { server_warning } from "../Redux/global_state/global_state_slice";
 // import axios from "axios";
 // axios.get('hhttp://localhost:4000/menuitems')
 

@@ -7,7 +7,11 @@ export const VendorSlice = createSlice({
     },
     reducers:{
         ShowAddvendorModal:(state)=>{
-            state.addvendor=true
+            if(state.addvendor){
+                state.addvendor=false
+            }else{
+                state.addvendor=true
+            }
         },
     }
 })

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {ErrorBoundary} from 'react-error-boundary'
 import Home from "./Home";
@@ -9,8 +8,10 @@ import Currentorder from "./RecentOrders/Currentorder";
 import socket from "./context/socket";
 import store from "./Redux/store";
 import { Provider } from "react-redux";
-import EditMenu from "./EditMenu/EditMenu";
+import EditMenu from "./component/EditMenu/EditMenu";
 import AccountMainPage from "./component/Accounts/Accountsmainpage";
+import Employepage from "./component/Employee/Employeepage.jsx";
+import Loginpage from "./component/Auth/login";
 
 function ErrorHandler({error}){
     return (
@@ -60,6 +61,8 @@ function App(){
        <Route path="editmenu" element={<EditMenu/>}/>
        <Route path="currentorder" element={<Currentorder/>} />
        <Route path="accounts" element={<AccountMainPage/>} />
+       <Route path="employees" element={<Employepage/>} />
+       <Route path="login" element={<Loginpage/>} />
       </Routes>
     </BrowserRouter>
     </Provider>

@@ -4,7 +4,8 @@ export const menuopenSlice = createSlice({
     name:'sidediv_status',
     initialState:{
         value:false,
-        warning:false
+        warning:false,
+        token:''
     },
     reducers:{
         should_show : state=>  {
@@ -16,9 +17,13 @@ export const menuopenSlice = createSlice({
             }else{
                 state.warning=true
             }
+        },
+        setToken:(state,action)=>{
+            state.token = action.payload
+            console.log("Token has been set!");
         }
     }
 })
 
-export const {should_show,server_warning} = menuopenSlice.actions
+export const {should_show,server_warning,setToken} = menuopenSlice.actions
 export default menuopenSlice.reducer

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updatearray } from "../Redux/global_state/orderarraySlice";
-import { update_available_item } from "../Redux/global_state/MenuSlice";
-import socket from "../context/socket";
+import { updatearray } from "../../Redux/global_state/orderarraySlice";
+import { update_available_item } from "../../Redux/global_state/MenuSlice";
+
+// import socket from "../context/socket";
+import socket from "../../context/socket";
 import { Socket } from "socket.io-client";
 import warningimg from './warning.png'
 // import './itembox.css'
