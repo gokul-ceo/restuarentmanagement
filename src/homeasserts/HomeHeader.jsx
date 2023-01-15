@@ -1,11 +1,20 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
+import order from './order.png'
+import invoice from './manageinvoice.png'
+import employee from './manageemploye.png'
+import bills from './payment.png'
+import update from './updated.png'
+import home from './home.png'
+import logout from './logout.png'
 // import { useSearchParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {EmployeeIcon, MenuIcon, UserIcon} from './HomeIcons'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import Currentorder from "../RecentOrders/Currentorder";
 import { rerender_inspector } from "../Render_inspector";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,8 +42,56 @@ const style={
 }
 
 function HomeHeader(){
+    const ref = useRef(null)
     const[disabledLink,setdisabledLink] = useState(false);
     const[islogged,setlogged] = useState(false);
+    const[show,setshow]=useState(false)
+    function handlemodelclose(){
+        setshow(!show)
+    }
+    function Sidecanvase(props){
+        return <>
+        <div style={{'width':'200px','zIndex':'2','height':'740px','position':'absolute','top':'0','left':'-22px'}} className={show?"bg-light":' d-none'}>
+           <div className="d-flex justify-content-between mb-4">
+            <span className="fw-bold ms-5">Menu</span>
+            <button onClick={props.onHide} className="btn btn-close"></button>
+           </div>
+           <div className="my-2">
+           <div className="d-flex">
+            <img alt="order.png" src={home} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/'><span style={{'marginBottom':'10px','display':'block'}}>Home</span></Link>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={order} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/currentorder'><span style={{'marginBottom':'10px','display':'block'}}>Currentorders</span></Link>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={update} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/editmenu'><span style={{'marginBottom':'10px','display':'block'}}>Update Menu</span></Link>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={invoice} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/accounts' ><span style={{'marginBottom':'10px','display':'block'}}>Manage invoices</span></Link>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={employee} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/employees'><span style={{'marginBottom':'10px','display':'block'}}>Manage Employees</span></Link>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={bills} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <span style={{'marginBottom':'10px','display':'block'}}>View bills</span>
+            </div>
+            <div className="d-flex">
+            <img alt="order.png" src={logout} style={{'width':'20px','height':'20px','marginLeft':'5px','marginRight':'10px'}}/>
+           <Link style={{'textDecoration':'none','color':'inherit'}} to='/employees'><span style={{'marginBottom':'10px','display':'block'}}>Logout</span></Link>
+            </div>
+           </div>
+        
+
+        </div>
+      </>
+    }
+   
   
     // function render_inspector(){
     //      console.log(`HomeHeader.js is rendered for ${count} times`);
@@ -74,6 +131,7 @@ function HomeHeader(){
         //     console.log("Result:",json);
         // })
     }
+   
     const[username,setusername]=useState(null)
     const dispatch = useDispatch()
     useEffect(()=>{
@@ -111,19 +169,15 @@ function HomeHeader(){
     <div class="dropdown">
     {/* <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> */}
     {/* <Link to="currentorders"> */}
-    <svg xmlns="http://www.w3.org/2000/svg" className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"   width='30' height='30' fill="currentColor" class="bi bi-list my-2" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" onClick={handlemodelclose} className="dropdown-toggle" href="#" role="button"  aria-expanded="false"   width='30' height='30' fill="currentColor" class="bi bi-list my-2" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
   </svg>
+  <Sidecanvase show={show} onHide={handlemodelclose}/>
   {/* </Link> */}
   {/* </a> */}
   {/* <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
  
   </button> */}
-  <ul class="dropdown-menu">
-    <li><Link className="dropdown-item"  to="currentorders">View orders</Link> </li>
-    <li><a class="dropdown-item" href="/src/RecentOrders/Currentorder.js">Update Menu</a></li>
-    {/* <li><a class="dropdown-item" href="#"></a></li> */}
-  </ul>
 </div>
 
     

@@ -13,18 +13,21 @@ function EditMenu(){
     const dispatch = useDispatch()
     const[Menulist,setMenulist] = useState([])
     const[warning,setwarning] = useState(false)
-    const serverwarning = useSelector((state)=>state.warn.warning)
-    useEffect(()=>{
-        // console.log("This working warning!@!");
-        // setwarning(true)
-        if(serverwarning === true){
-            setwarning(true)
-        console.log("This working warning!@!");
-        }
-        else{
-            setwarning(false)
-        }
-    },[serverwarning])
+    // const serverwarning = useSelector((state)=>state.warn.warning)
+    // useEffect(()=>{
+    //     // console.log("This working warning!@!");
+    //     // setwarning(true)
+    //     if(serverwarning === true){
+    //         setwarning(true)
+    //     console.log("This working warning!@!");
+    //     }
+    //     else{
+    //         if(serverwarning!==undefined){
+    //             setwarning(false)
+
+    //         }
+    //     }
+    // },[serverwarning])
     // const availableitems = useSelector((state)=>state.orderlist.available_Menu)
     
     useEffect(()=>{
@@ -68,7 +71,7 @@ function EditMenu(){
         }
  
         <form  >
-        <ul class="list-group list-group-flush">
+        <ul className="list-group list-group-flush">
             {
                 Menulist.map((element)=>{
                     return <ItemBox price={element.Price} quantity={element.Quantity} name={element.Item} lastupdate={element.Lastupdated} status={element.Available}/>

@@ -34,16 +34,16 @@ function ItemBox(props){
     // const list = useSelector((state)=>state.Menu.availableitems)
     const[selecteditem,setselecteditem]=useState({Item:'',Available:false})
     // const warning = useSelector((state)=>state.warn.warning)                       this work's fine.... may be used in  future
-    const[warning,setwarning] = useState(false)
-    const serverwarning = useSelector((state)=>state.warn.warning)
-    useEffect(()=>{
-        // console.log("This working warning!@!");
-        // setwarning(true)
-        if(serverwarning === true){
-            setwarning(true)
-        console.log("This working warning!@!");
-        }
-    },[serverwarning])
+    // const[warning,setwarning] = useState(false)
+    // const serverwarning = useSelector((state)=>state.warn.warning)
+    // useEffect(()=>{
+    //     // console.log("This working warning!@!");
+    //     // setwarning(true)
+    //     if(serverwarning === true){
+    //         setwarning(true)
+    //     console.log("This working warning!@!");
+    //     }
+    // },[serverwarning])
  
     // socket.emit('updateitem','testing updateitem')
     function handleclick(e){
@@ -51,7 +51,7 @@ function ItemBox(props){
           seterror(true)
         }
         else{
-            if(!warning){
+            
                 if(check){
                     setcheck(false)
                     setselecteditem({Item:Name,Available:false})
@@ -64,7 +64,7 @@ function ItemBox(props){
                     setstatuscolor('green')
                 }
                 seterror(false)
-            }
+            
             
         }
 
@@ -140,10 +140,10 @@ function ItemBox(props){
                     <input className="custome-control-input"  type='checkbox' value={props.name} checked={check} readOnly/>
                     
                 </div>
-                <div class="input-group my-2">
+                <div style={{'zIndex':'1'}} class="input-group my-2">
                 <span class="input-group-text fs-6">Price & Quantity</span>
-                 <input type="Number" className="fs-6" aria-label="First name" value={price} onChange={handlepriceedit} class="form-control"/>
-                    <input type="Number" className="fs-6" aria-label="Last name" value={quantity} onChange={handlequantityedit} class="form-control"/>
+                 <input  type="Number" className="fs-6" aria-label="First name" value={price} onChange={handlepriceedit} class="form-control"/>
+                    <input  type="Number" className="fs-6" aria-label="Last name" value={quantity} onChange={handlequantityedit} class="form-control"/>
                     </div>
                 <span style={{'fontSize':'10px'}} className='text-muted'>Last updated at {time}</span>
             {error&&<h6 style={{'fontSize':'10px'}} className="text-danger mt-2"><img src={warningimg} style={{'fontSize':'12px','width':'20px','height':'20px'}}/>Enter the valid quantity and price!</h6>}

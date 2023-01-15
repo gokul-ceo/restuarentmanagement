@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { rerender_inspector } from "../../Render_inspector";
+import { useDispatch } from "react-redux";
+import { Updateorderarray } from "../../Redux/billing/billingSlice";
 const style={
     display:{
         height:'50vh',
@@ -44,6 +46,7 @@ export function printjob(array){
     console.log("print this array: ",array);
 }
 export function BillitemDisplay(props){
+    const dispatch = useDispatch()
     const[countrender,setcountrender] = useState(1)
     useEffect(()=>{
         setcountrender(countrender + 1)
@@ -75,21 +78,20 @@ export function BillitemDisplay(props){
             
         })
     },[])
-    useEffect(()=>{
-        for(let i=0;i<menu.length;i++){
-            console.log("Elementea inside'e rrayes.: ",menu[i].Item);
-            // console.log("Name alone: ",menu[i].Item);
-            // console.log("Availability: ",menu[i].Available);
-            // console.log("Price: ",menu[i].Price); 
-         }
-         console.log("Props value= ",props.value);
+    // useEffect(()=>{
+    //     for(let i=0;i<menu.length;i++){
+    //         console.log("Elementea inside'e rrayes.: ",menu[i].Item);
+    //         // console.log("Name alone: ",menu[i].Item);
+    //         // console.log("Availability: ",menu[i].Available);
+    //         // console.log("Price: ",menu[i].Price); 
+    //      }
+    //      console.log("Props value= ",props.value);
 
-    },[])
+    // },[])
     const Todisplay = props.value
     // console.log("");
      const defaultitle = <div style={style.detailsdefault} className="container d-flex justify-content-between itemdetails "> 
-          <h6>SI.NO</h6>
-          <h6>Item</h6>
+          <h6  style={{'width':'100px'}}>Item</h6>
           <h6>Quantity</h6>
           <h6>Price</h6>
           <h6>Total</h6>
@@ -106,31 +108,52 @@ export function BillitemDisplay(props){
     useEffect(()=>{
         Todisplay.length<=0?setempty(true):setempty(false)
     },[Todisplay])
+    function OrderItemdisplay(props){
+        var name = props.name
+        var quantity = props.quantity
+        var price = props.price
+        console.log("Name:",props.name);
+        console.log("Quantity:",props.quantity);
+        console.log("Price",props.price);
+        console.log("Total:",quantity*price);
+        var total = 40;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        var orderobj = {name,quantity}
+        useEffect(()=>{
+            if(quantity!==undefined){
+                dispatch(Updateorderarray(orderobj))
+            }
+        },[orderobj, quantity])
+        
+        
+        return <>
+          <div style={{'border':'1px solid black','borderRadius':'7px'}} className="container my-1 d-flex justify-content-between ">
+            <span style={{'width':'100px'}}>{name}</span>
+            <span>{quantity}</span>
+            <span>{price}</span>
+            <span>₹{total}</span>
+
+        </div>
+        </>
+    }
 
     return <React.Fragment>
     
     <div style={style.display} ons className=" billitemdisplay container-sm ">
-    {/* <div style={style.detailsdefault} className="container d-flex justify-content-between itemdetails "> 
-          <h6>SI.NO</h6>
-          <h6>Item</h6>
-          <h6>Quantity</h6>
-          <h6>Price</h6>
-          <h6>Total</h6>
-       </div> */}
        <div style={style.overflowcontainer}  className="container  overflow-auto">
        {defaultitle}
-        {!isempty?Todisplay.map((item)=>
-        <div style={style.details} className="container d-flex justify-content-between itemdetails "> 
-        <h6 style={style.item}>1.</h6>
-        <h6 style={style.item}>{menu[item[0]].Item}</h6>
-        <h6 style={style.item}>{item[1]}</h6>
-        <h6 style={style.item}>{menu[item[0]].Price}</h6>
-        <h6 style={style.item}>₹64</h6>
-       
-        {/* <img src="close.png" alt="close_image" /> */}
-        {/* {clicked?<img style={style.close}  onClick={handleclose()} src="close.png" alt="close_image" />:null} */}
-        </div>
-       ):<div style={style.warning} className="warningdiv"><span>⛔No Bill to display⛔</span></div>}
+        {!isempty?
+        Todisplay.map((item)=>
+        <OrderItemdisplay name={menu[item[0]].Item} quantity={item[1]} price={menu[item[0]].Price} />
+        // <div style={style.details} className="container d-flex justify-content-between itemdetails "> 
+        // <h6 style={style.item}>1.</h6>
+        // <h6 style={style.item}>{menu[item[0]].Item}</h6>
+        // <h6 style={style.item}>{item[1]}</h6>
+        // <h6 style={style.item}>{menu[item[0]].Price}</h6>
+        // <h6 style={style.item}>₹64</h6>
+        //   </div>
+        ):<div style={style.warning} className="warningdiv"><span>⛔No Bill to display⛔</span></div>} 
+        
        
        </div>
     </div>

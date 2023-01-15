@@ -10,7 +10,7 @@ const style={
         
     },
     button:{
-        width:'4rem'
+        width:'50px'
     },
     funckye:{
         width:'4.4rem'
@@ -76,6 +76,7 @@ export function Billingkeyboard(){
         totalarr=[]
         clickednumbers=[]
         singlearr=[]
+        setorderarr([])
         setitem(0)
         setquantity(0)
         setitemdisplay([])
@@ -88,7 +89,7 @@ export function Billingkeyboard(){
     <div style={style.keyboard} className="container-sm billingkeyboard text-center fs-1">
     <div className="row m-0 p-0 my-2  ">
             <div className="col">
-                <button onClick={Clickevent} style={style.button} value='7' type='button' className='btn btn-outline-primary'>7</button>
+                <button  onClick={Clickevent} style={style.button} value='7' type='button' className='btn btn-outline-primary'>7</button>
             </div>
             <div className="col">
                 <button onClick={Clickevent} style={style.button} value='8' type='button' className='btn btn-outline-primary'>8</button>

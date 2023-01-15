@@ -12,6 +12,8 @@ import EditMenu from "./component/EditMenu/EditMenu";
 import AccountMainPage from "./component/Accounts/Accountsmainpage";
 import Employepage from "./component/Employee/Employeepage.jsx";
 import Loginpage from "./component/Auth/login";
+import EmployeeSalaryPage from "./component/Employee/Employeesalarypage";
+import ModernBilling from "./component/NewBilling/Nbilling";
 
 function ErrorHandler({error}){
     return (
@@ -62,6 +64,8 @@ function App(){
        <Route path="currentorder" element={<Currentorder/>} />
        <Route path="accounts" element={<AccountMainPage/>} />
        <Route path="employees" element={<Employepage/>} />
+       <Route path="presentemployees" element={<EmployeeSalaryPage/>} />
+       <Route path="newbilling" element={<ModernBilling/>} />
        <Route path="login" element={<Loginpage/>} />
       </Routes>
     </BrowserRouter>

@@ -5,6 +5,7 @@ import MenuSlice from "./global_state/global_state_slice";
 import RecivedorderArraySlice from "./global_state/RecivedorderSlice";
 import VendorSlice from "./Accountsredux/vendorSlice";
 import EmpSlice from "./Emp/EmployeeSlice";
+import billingSlice from "./billing/billingSlice";
 
 
 export default configureStore({
@@ -13,7 +14,8 @@ export default configureStore({
         Gstate:global_state_slice,
         recivedorder:RecivedorderArraySlice,
         newvendor:VendorSlice,
-        emplist:EmpSlice
+        emplist:EmpSlice,
+        billing:billingSlice
     }
 },
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
