@@ -1,0 +1,54 @@
+.Nbmaindiv {
+    width: 100px;
+    height: 686px;
+    background-color: rgb(211, 38, 38);
+}
+
+.Nbmaindiv ul {
+    padding: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.Nbmaindiv li {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.menudisplaydivmain {
+    position: absolute;
+    padding: 5px;
+    /* background-color: pink; */
+    left: 100px;
+    height: 686px;
+
+}
+
+.menudisplaydivmain h4 {
+    /* width: 200px; */
+}
+
+.Menubox {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 80px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.Menuboxdiv1 {
+    background-color: cadetblue;
+    width: 70%;
+}
+
+.Menuboxdiv2 {
+    width: 30%;
+
+    background-color: aquamarine;
+}

@@ -1,3 +1,10 @@
 import { io } from "socket.io-client";
-const socket = io('http://localhost:4000/admin',{transports:['websocket']});
-export default socket
+const server_url = "https://hsswebend-4z4hd76enq-em.a.run.app/";
+const socket = io(server_url + "admin", {
+  transports: ["websocket"],
+});
+export default socket;
+
+export const ordersocket = io(server_url + "notify", {
+  transports: ["websocket"],
+});

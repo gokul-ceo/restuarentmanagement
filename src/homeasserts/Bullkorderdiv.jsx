@@ -4,7 +4,7 @@ import { useEffect,useState } from "react";
 // import { rerender_inspector } from "/src/Render_inspector";
 const style={
     bulkdiv:{
-        height:'139px',
+        height:'140px',
         width:'327px',
         borderRadius:'9px',
         backgroundColor:'#F3F1F1'
