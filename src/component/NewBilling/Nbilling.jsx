@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Nbillling.module.css";
+import search from "./search.svg";
 import HomeHeader from "../../homeasserts/HomeHeader";
+import Menubox from "./Menubox";
 function ModernBilling() {
   function MenuCatagorylist() {
     return (
@@ -25,15 +27,45 @@ function ModernBilling() {
   return (
     <>
       <HomeHeader />
+
       <div className={styles.menudisplaydivmain}>
-        <div className={styles.Menubox}>
-          <div className={styles.Menuboxdiv1}>
-            <span>Dosa</span>
-          </div>
-          <div className={styles.Menuboxdiv2}>
-            <button>ADD</button>
-          </div>
+        <div className={styles.searchbar}>
+          <input type="text" />
+          <img src={search} alt="search" />
         </div>
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <Menubox />
+        <div style={{ height: "200px" }}></div>
+      </div>
+      <div className={styles.checkoutdiv}>
+        <span>checkout</span>
       </div>
       <MenuCatagorylist />
     </>

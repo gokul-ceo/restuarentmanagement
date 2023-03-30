@@ -20,9 +20,14 @@
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    display: none
+}
+
 .menudisplaydivmain {
+    overflow: auto;
     position: absolute;
-    padding: 5px;
+    padding: 20px;
     /* background-color: pink; */
     left: 100px;
     height: 686px;
@@ -38,17 +43,87 @@
     justify-content: space-between;
     width: 220px;
     height: 80px;
+    margin-bottom: 10px;
     border-radius: 7px;
     border: 1px solid black;
 }
 
 .Menuboxdiv1 {
-    background-color: cadetblue;
-    width: 70%;
+    display: flex;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: cadetblue; */
+    width: 40%;
 }
 
 .Menuboxdiv2 {
-    width: 30%;
+    /* display: flex; */
+    padding: 5px;
+    /* justify-content: center; */
+    align-items: center;
+    width: 60%;
 
-    background-color: aquamarine;
+
+    /* background-color: aquamarine; */
+}
+
+.Menuboxdiv2 button {
+    border: none;
+    border-radius: 7px;
+    background-color: green;
+    color: white;
+    margin: 10px 10px 10px 10px;
+    width: 100px;
+}
+
+.quantitydivm {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+}
+
+.quantitydivm input {
+    text-align: center;
+    margin: 0 5px;
+    width: 50px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.quantitydivm img {
+    height: 20px;
+    width: 20px;
+}
+
+.searchbar {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /* background-color: cadetblue; */
+}
+
+.searchbar input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.searchbar img {
+    height: 30px;
+    width: 30px;
+}
+
+.checkoutdiv {
+    position: absolute;
+    bottom: 0;
+    background-color: palevioletred;
+    width: 100%;
+    height: 100px;
 }
