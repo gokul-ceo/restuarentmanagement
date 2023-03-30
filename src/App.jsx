@@ -62,90 +62,90 @@ function App() {
             <Route
               path="billing"
               element={
-                <PrivateRoute>
-                  {" "}
-                  <Billing />
-                </PrivateRoute>
+                // <PrivateRoute>
+                // {" "}
+                <Billing />
+                // </PrivateRoute>
               }
             />
             <Route
               path="orders"
               element={
-                <PrivateRoute>
-                  <Orderdisplay />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Orderdisplay />
+                // </PrivateRoute>
               }
             />
             <Route
               path="editmenu"
               element={
-                <PrivateRoute>
-                  <EditMenu />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <EditMenu />
+                // </PrivateRoute>
               }
             />
             <Route
               path="currentorder"
               element={
-                <PrivateRoute>
-                  <Currentorder />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Currentorder />
+                // </PrivateRoute>
               }
             />
             <Route
               path="accounts"
               element={
-                <PrivateRoute>
-                  <AccountMainPage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <AccountMainPage />
+                // </PrivateRoute>
               }
             />
             <Route
               path="employees"
               element={
-                <PrivateRoute>
-                  <Employepage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Employepage />
+                // </PrivateRoute>
               }
             />
             <Route
               path="presentemployees"
               element={
-                <PrivateRoute>
-                  <EmployeeSalaryPage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <EmployeeSalaryPage />
+                // </PrivateRoute>
               }
             />
             <Route
               path="newbilling"
               element={
-                <PrivateRoute>
-                  <ModernBilling />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <ModernBilling />
+                // </PrivateRoute>
               }
             />
             <Route
               path="vendorlist"
               element={
-                <PrivateRoute>
-                  <Vendorlistpage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Vendorlistpage />
+                // </PrivateRoute>
               }
             />
             <Route
               path="customerspage"
               element={
-                <PrivateRoute>
-                  <Vendorlistpage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Vendorlistpage />
+                // </PrivateRoute>
               }
             />
             <Route
               path="viewbills"
               element={
-                <PrivateRoute>
-                  <ViewBillmainpage />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <ViewBillmainpage />
+                // </PrivateRoute>
               }
             />
 
